@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Company App Suite</title>
+  <style>
+    .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: gray;
+    }
+    .hover-scale:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-light py-5">
+  <div class="container">
+    <h1 class="text-center mb-5 fw-bold">Company App Suite</h1>
+
+    <!-- Search and Filters -->
+    <div class="mb-4">
+      <!-- Search Input -->
+      <div class="position-relative mb-3">
+        <input 
+          type="text" 
+          id="search" 
+          class="form-control ps-5" 
+          placeholder="Search apps...">
+        <span class="search-icon">🔍</span>
+      </div>
+
+      <!-- Department Filters -->
+      <div id="department-buttons" class="d-flex flex-wrap align-items-center gap-2">
+        <span class="text-muted">Departments:</span>
+        <!-- Buttons dynamically generated -->
+      </div>
+    </div>
+
+    <!-- App Grid -->
+    <div id="app-grid" class="row g-4">
+      <!-- Cards dynamically generated -->
+    </div>
+
+    <!-- No Results State -->
+    <div id="no-results" class="text-center text-muted mt-4" style="display: none;">
+      No apps found. Try a different search or filter.
+    </div>
+  </div>
+
+  <script>
+    const companyApps = [
+      { name: "HR Portal", icon: "👥", department: "Human Resources", description: "Employee management, payroll, and benefits tracking", link: "/hr-portal" },
+      { name: "Sales CRM", icon: "💼", department: "Sales", description: "Customer relationship management and sales tracking", link: "/sales-crm" },
+      { name: "Finance Tracker", icon: "💰", department: "Finance", description: "Budgeting, expense reporting, and financial analysis", link: "/finance-tracker" },
+      { name: "IT Support", icon: "🖥️", department: "Information Technology", description: "Ticketing system and technical support management", link: "/it-support" },
+      { name: "Marketing Analytics", icon: "📊", department: "Marketing", description: "Campaign tracking and performance metrics", link: "/marketing-analytics" },
+      { name: "Project Management", icon: "📋", department: "Operations", description: "Team collaboration and project tracking", link: "/project-management" },
+      { name: "Legal Document Manager", icon: "⚖️", department: "Legal", description: "Contract management and legal document tracking", link: "/legal-docs" }
+    ];
+
+    const searchInput = document.getElementById('search');
+    const departmentButtons = document.getElementById('department-buttons');
+    const appGrid = document.getElementById('app-grid');
+    const noResults = document.getElementById('no-results');
+
+    let selectedDepartments = [];
+
+    const renderDepartments = () => {
+      const departments = [...new Set(companyApps.map(app => app.department))];
+      departmentButtons.innerHTML = '<span class="text-muted">Departments:</span>';
+      departments.forEach(dept => {
+        const button = document.createElement('button');
+        button.className = 'btn btn-sm btn-outline-secondary';
+        button.textContent = dept;
+        button.onclick = () => toggleDepartment(dept, button);
+        departmentButtons.appendChild(button);
+      });
+
+      if (selectedDepartments.length > 0) {
+        const clearButton = document.createElement('button');
+        clearButton.className = 'btn btn-sm btn-link text-danger';
+        clearButton.textContent = 'Clear';
+        clearButton.onclick = clearDepartments;
+        departmentButtons.appendChild(clearButton);
+      }
+    };
+
+    const toggleDepartment = (dept, button) => {
+      if (selectedDepartments.includes(dept)) {
+        selectedDepartments = selectedDepartments.filter(d => d !== dept);
+        button.classList.remove('btn-primary');
+        button.classList.add('btn-outline-secondary');
+      } else {
+        selectedDepartments.push(dept);
+        button.classList.remove('btn-outline-secondary');
+        button.classList.add('btn-primary');
+      }
+      renderApps();
+    };
+
+    const clearDepartments = () => {
+      selectedDepartments = [];
+      renderDepartments();
+      renderApps();
+    };
+
+    const renderApps = () => {
+      const searchTerm = searchInput.value.toLowerCase();
+      const filteredApps = companyApps.filter(app => 
+        app.name.toLowerCase().includes(searchTerm) &&
+        (selectedDepartments.length === 0 || selectedDepartments.includes(app.department))
+      );
+
+      appGrid.innerHTML = '';
+      if (filteredApps.length === 0) {
+        noResults.style.display = 'block';
+        return;
+      }
+
+      noResults.style.display = 'none';
+      filteredApps.forEach(app => {
+        const col = document.createElement('div');
+        col.className = 'col-md-4';
+        col.innerHTML = `
+          <a href="${app.link}" class="text-decoration-none text-dark">
+            <div class="card hover-scale h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="fs-1 me-3">${app.icon}</div>
+                  <h5 class="card-title mb-0">${app.name}</h5>
+                </div>
+                <p class="card-text">${app.description}</p>
+                <small class="text-muted">Department: ${app.department}</small>
+              </div>
+            </div>
+          </a>
+        `;
+        appGrid.appendChild(col);
+      });
+    };
+
+    searchInput.addEventListener('input', renderApps);
+    renderDepartments();
+    renderApps();
+  </script>
+</body>
+</html>

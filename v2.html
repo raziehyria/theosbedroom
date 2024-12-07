@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enhanced Website Template</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <style>
         /* CSS Reset and Base Styles */
         * {
@@ -90,7 +92,7 @@
             animation: fadeInUp 1s 0.5s forwards;
         }
 
-        .btn {
+        #btn {
             display: inline-block;
             background-color: #3498db;
             color: white;
@@ -103,7 +105,7 @@
             animation: fadeInUp 1s 0.7s forwards;
         }
 
-        .btn:hover {
+        #btn:hover {
             background-color: #2980b9;
             transform: scale(1.05);
         }
@@ -205,6 +207,18 @@
                 grid-template-columns: 1fr;
             }
         }
+        /*search functionality*/
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: gray;
+          }
+          .hover-scale:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+          }
     </style>
 </head>
 <body>
@@ -227,10 +241,10 @@
             <div class="container">
                 <h2>Your Gateway to Excellence</h2>
                 <p>Discover what we can do for you.</p>
-                <a href="#services" class="btn">Learn More</a>
+                <a href="#services" id="btn">Learn More</a>
             </div>
         </div>
-<#region hero>
+
         <main id="content">
             <div class="container">
                 <section id="about">
@@ -243,6 +257,41 @@
                             <p>Our team specializes in delivering innovative solutions tailored to your needs.</p>
                         </div>
                     </div>
+                </section>
+                
+                <section id="app">
+                    <h2>About Us</h2>
+                    <div class="mb-4">
+                        <!-- Search Input -->
+                        <div class="position-relative mb-3">
+                          <input 
+                            type="text" 
+                            id="search" 
+                            class="form-control ps-5" 
+                            placeholder="Search apps...">
+                          <span class="search-icon">🔍</span>
+                        </div>
+                  
+                        <!-- Department Filters -->
+                        <div id="department-buttons" class="d-flex flex-wrap align-items-center gap-2">
+                          <span class="text-muted">Departments:</span>
+                          <!-- Buttons dynamically generated -->
+                        </div>
+                      </div>
+                  
+                      <!-- App Grid -->
+                      <div id="app-grid" class="row g-4">
+                        <!-- Cards dynamically generated -->
+                      </div>
+                  
+                      <!-- No Results State -->
+                      <div id="no-results" class="text-center text-muted mt-4" style="display: none;">
+                        No apps found. Try a different search or filter.
+                      </div>
+                    </div>
+                  
+                    
+                    
                 </section>
 
                 <section id="services">
@@ -311,5 +360,207 @@
             </div>
         </footer>
     </div>
+    <script>
+       
+        const companyApps =  [
+            { description: "", name: "HI-SPARK", department: "Corporate", icon: "content/imgs/hispark.svg", link: "" },
+            { description: "", name: "CORP APP", department: "Corporate", icon: "content/imgs/CorpApp.svg", link: "https://apps.holtec.com/CORP" },
+            { description: "", name: "DIRECTORY", department: "Corporate", icon: "content/imgs/Directory.svg", link: "https://apps.holtec.com/CORP/Account/Login?ReturnUrl=%2FCORP%2FProfile%2Fdirectory" },
+            { description: "", name: "GIFTS REGISTER", department: "Corporate", icon: "content/imgs/GiftRegister.svg", link: "https://apps.holtec.com/Corp/Account/Login?ReturnUrl=%2FCorp%2FGiftsAndBenifits" },
+            { description: "", name: "PRO SHOP", department: "Corporate", icon: "content/imgs/ProShop.svg", link: "https://business.landsend.com/store/holtec_pro_shop/" },
+            { description: "", name: "IMAGE LIBRARY", department: "Corporate", icon: "content/imgs/imageLibrary.svg", link: "https://apps.holtec.com/CORP/imageLibrary" },
+            { description: "", name: "HIP 6", department: "Corporate", icon: "content/imgs/Hip6.svg", link: "https://appserver.holtec.com/HIP6" },
+            { description: "", name: "HORA EXTRA", department: "Corporate", icon: "content/imgs/HoraExtra.svg", link: "https://apps.holtec.com/Corp/Account/Login?ReturnUrl=%2FCorp%2FOvertimeRequest%2FCreateOvertimeRequest%2F0" },
+            { description: "", name: "POSITION PAPERS", department: "Corporate", icon: "content/imgs/PositionPapers.svg", link: "https://mfg.holtec.com/PositionPaper" },
+            { description: "", name: "SECURITY", department: "Corporate", icon: "content/imgs/Security.svg", link: "https://apps.holtec.com/securityapp1" },
+            { description: "", name: "HTC EVENT FORM", department: "Corporate", icon: "content/imgs/HTCEventForm.svg", link: "https://apps.holtec.com/CORP/EventRequestForm/ERCDisplayList" },
+            { description: "", name: "VISITOR PASS", department: "Corporate", icon: "content/imgs/VisitorPass.svg", link: "http://apps.holtec.com/corp/Visitor" },
+            { description: "", name: "WATERMARK", department: "Corporate", icon: "content/imgs/WaterMark.svg", link: "https://appserver.holtec.com/IT/Watermark/Index" },
+            { description: "", name: "TRAVEL REQUEST", department: "Corporate", icon: "content/imgs/TravelRequest.svg", link: "https://apps.holtec.com/CORP/Traveller/Index" },
+            { description: "", name: "DEVOPS", department: "Engineering and Design", icon: "content/imgs/Devops.svg", link: "https://apps.holtec.com/HelpDesk/SoftwareRelease/SWReleaseList" },
+            { description: "", name: "TRAINING PORTAL", department: "Corporate", icon: "content/imgs/TrainingPortal.svg", link: "https://holteccorporate.learnupon.com/" },
+            { description: "", name: "APPLICATION SUPPORT", department: "Corporate", icon: "content/imgs/ApplicationSupport.svg", link: "https://appserver.holtec.com/Content/assets/ApplicationSupport.html" },
+            { description: "", name: "PROFESSIONAL RANKING", department: "Corporate", icon: "content/imgs/ProfessionalRanking.svg", link: "https://apps.holtec.com/Corp/RankReview/ProfessionalRankingMainPage" },
+            { description: "", name: "SECURITY ESCORT", department: "Corporate", icon: "content/imgs/SecurityEscort.svg", link: "https://apps.holtec.com/hisecurity/" },
+            { description: "", name: "LEARN UPON", department: "Corporate", icon: "content/imgs/learnupon.png", link: "https://holteccorporate.learnupon.com/" },
+            
+            { description: "", name: "DAILY REPORT", department: "Human Resources", icon: "content/imgs/DailyReport.svg", link: "https://apps.holtec.com/CORP/WeeklyReport/CreateDailyReport" },
+            { description: "", name: "HOLIDAY CALENDAR", department: "Human Resources", icon: "content/imgs/holidays.svg", link: "https://appserver.holtec.com/Holidays2024.html" },
+            { description: "", name: "WEEKLY REPORT", department:"Human Resources",  icon: "content/imgs/WeeklyReport.svg", link: "https://apps.holtec.com/CORP/WeeklyReport/CreateWeeklyReport" },
+            { description: "", name: "WFH REQUEST", department: "Human Resources", icon: "content/imgs/WFHRequest.svg", link: "https://apps.holtec.com/CORP/HRForm/CreateWFHRequest/0" },
+            { description: "", name: "OUT OF OFFICE", department: "Human Resources", icon: "content/imgs/OOF.svg", link: "https://apps.holtec.com/Corp/HRForm/OutOfOfficeCalendar" },
+            { description: "", name: "ADP", department: "Human Resources", icon: "content/imgs/ADP.svg", link: "https://workforcenow.adp.com/" },
+            { description: "", name: "AHC", department: "Human Resources", icon: "content/imgs/AHC.svg", link: "https://apps.holtec.com/corp/public/AHCMemo" },
+            { description: "", name: "EXPENSES", department: "Human Resources", icon: "content/imgs/Expenseclaim.svg", link: "https://apps.holtec.com/Corp/ExpenseClaim/CreateExpenseClaim" },
+            { description: "", name: "IMPROVEMENTS", department: "Human Resources", icon: "content/imgs/Imrpovements.svg", link: "https://apps.holtec.com/CORP/SelfImprovement/Create" },
+            { description: "", name: "IT SERVICE DESK", department: "Human Resources", icon: "content/imgs/Itservicedesk.svg", link: "https://servicedesk.holtec.com/" },
+            { description: "", name: "OJT", department: "Human Resources", icon: "content/imgs/ojt.svg", link: "https://apps.holtec.com/OJTHIQ" },
+            { description: "", name: "PERFORMANCE EVALUATION PORTAL", department: "Human Resources", icon: "content/imgs/Performanceevaluationportal.svg", link: "https://appserver.holtec.com/HRReview/" },
+          
+            { description: "", name: "INVENTORY", department: "Manufacturing and Inventory", icon: "content/imgs/Inventory (1).svg", link: "https://mfg.holtec.com/InventoryApp" },
+            { description: "", name: "ASSETS", department: "Manufacturing and Inventory", icon: "content/imgs/assets.svg", link: "https://appserver.holtec.com/HAMA/MachineTools?company=ALL&cat=100" },
+            { description: "", name: "DIGITAL RT", department: "Manufacturing and Inventory", icon: "content/imgs/DigitalRT.svg", link: "https://apps.holtec.com/drt" },
+            { description: "", name: "LOGISTICS", department: "Manufacturing and Inventory", icon: "content/imgs/Logistics.svg", link: "https://mfg.holtec.com/ShipApp" },
+            { description: "", name: "VANTAGE RECEIVED", department: "Manufacturing and Inventory", icon: "content/imgs/Inventory-Received.svg", link: "https://appserver.holtec.com/IPS/ItemReceived" },
+            { description: "", name: "IMPR", department: "Manufacturing and Inventory", icon: "content/imgs/IMPR.svg", link: "https://mfg.holtec.com/prod/IMPR" },
+            { description: "", name: "MFG. PLANNING", department: "Manufacturing and Inventory", icon: "content/imgs/MFGPlanning.svg", link: "https://mfg.holtec.com/ManufacturingProcedure" },
+            { description: "", name: "OPERATION ZONES", department: "Manufacturing and Inventory", icon: "content/imgs/OperationsZone.svg", link: "https://htc-devbox.holtec.com/eZones/zones/ShowLiveData" },
+            { description: "", name: "PRODUCTION ALERT", department: "Manufacturing and Inventory", icon: "content/imgs/ProductionAlert.svg", link: "https://mfg.holtec.com/qcalert" },
+            { description: "", name: "PRODUCTION MANAGEMENT", department: "Manufacturing and Inventory", icon: "content/imgs/productionmanagement.svg", link: "https://mfg.holtec.com/prod" },
+            { description: "", name: "QC ALERT", department: "Manufacturing and Inventory", icon: "content/imgs/qcalert.svg", link: "https://mfg.holtec.com/QCAlert" },
+            { description: "", name: "SMART FACTORY", department: "Manufacturing and Inventory", icon: "content/imgs/smartfactory.svg", link: "http://mfg.holtec.com/ICS/SmartFactory" },
+            { description: "", name: "SHOP PRODUCTIVITY", department: "Manufacturing and Inventory", icon: "content/imgs/shopproduction.svg", link: "https://mfg.holtec.com/prod/ShopWorkers/ViewDirectIndirectReport" },
+            { description: "", name: "CR", department: "Manufacturing and Inventory", icon: "content/imgs/CR.svg", link: "https://mfg.holtec.com/CRNCR/" },
+            { description: "", name: "NCR", department: "Manufacturing and Inventory", icon: "content/imgs/NCR.svg", link: "https://mfg.holtec.com/CRNCR/" },
+            { description: "", name: "SFN", department: "Manufacturing and Inventory", icon: "content/imgs/SFN.svg", link: "https://mfg.holtec.com/CRNCR/" },
+            { description: "", name: "DDR", department: "Manufacturing and Inventory", icon: "content/imgs/DDR.svg", link: "https://mfg.holtec.com/CRNCR/" },
+            { description: "", name: "VNCR", department: "Manufacturing and Inventory", icon: "content/imgs/VNCR.svg", link: "https://mfg.holtec.com/CRNCR/" },
+            { description: "", name: "MITP", department: "Manufacturing and Inventory", icon: "content/imgs/MITP.svg", link: "https://apps.holtec.com/MITP" },
+            
+            { description: "", name: "VENDOR LIST", department: "Procurement", icon: "content/imgs/VendorList.svg", link: "https://appserver.holtec.com/prefervendor" },
+            { description: "", name: "VENDOR ORDER TRACKER", department: "Procurement", icon: "content/imgs/Vendororders.svg", link: "https://apps.holtec.com/vendorportalapp/" },
+            { description: "", name: "PO PORTAL", department: "Procurement", icon: "content/imgs/POPortal.svg", link: "https://appserver.holtec.com/ProcurementPortal" },
+            { description: "", name: "SEARCH PO", department: "Procurement", icon: "content/imgs/SearchPO.svg", link: "https://appserver.holtec.com/ProcurementPortal/SearchPO/FindPO" },
+            { description: "", name: "IPS - INVOICES", department: "Procurement", icon: "content/imgs/IPS.svg", link: "https://appserver.holtec.com/ips" },
+            { description: "", name: "EXCLUDED ENTITY LIST", department: "Procurement", icon: "content/imgs/Excludedentities.svg", link: "https://appserver.holtec.com/PreferVendor/EEL/RevisionDetails" },
+            { description: "", name: "IEP", department: "Procurement", icon: "content/imgs/IEP.svg", link: "https://mfg.holtec.com/invreceived" },
+          
+            { description: "", name: "HIDOC", department: "Engineering and Design", icon: "content/imgs/HIDOC.svg", link: "https://hidoc.holtec.com/hidoc" },
+            { description: "", name: "HIDOC - EXPORT CONTROLLED ZONE", department: "Engineering and Design", icon: "content/imgs/HIDOCEXPORT.svg", link: "https://hidoc.holtec.com/hidoc/ExportRestricted/ViewExportRestrictedFiles" },
+            { description: "", name: "DESIGN GROUP ORG CHART", department: "Engineering and Design", icon: "content/imgs/image59.svg", link: "https://appserver.holtec.com/Content/assets/Design%20Group%20Organization%20Chart%20February%208%202022.pdf" },
+            { description: "", name: "HI-BILL", department: "Engineering and Design", icon: "content/imgs/HiBill.svg", link: "https://eng.holtec.com/BOMWeb/" },
+
+            { description: "", name: "BUDGET TRACKER", department: "Project Management", icon: "content/imgs/Budgettracker.svg" , link: "https://appserver.holtec.com/hbt/" },
+            { description: "", name: "DOC TRANSMITTAL FORM", department: "Project Management", icon: "content/imgs/DTF.svg" , link: "https://appserver.holtec.com/hbt/dtf/projectList" },
+            { description: "", name: "EMAIL REQUEST", department: "Project Management", icon: "content/imgs/EmailRequest.svg", link: "https://holtecinc.sharepoint.com/sites/HoltecForms/Lists/Contractor%20Email%20Request%20Form/Item/newifs.aspx?List=acf2da75-b47f-46ad-a4a5-d2f642b60faf&Source=https%3A%2F%2Fholtecinc%2Esharepoint%2Ecom%2Fsites%2FHoltecForms%2FLists%2FContractor%2520Email%2520Request%2520Form%2FAllItems%2Easpx&ContentTypeId=0x0100AEA48CF4EEFA9E41BF2AA9FB38F4B0AF&RootFolder=" },
+            { description: "", name: "EXECUTIVE SPONSORS", department: "Project Management", icon: "content/imgs/Executivesponsers.svg" , link: "https://appserver.holtec.com/HBT/Projects/InternationalProject" },
+            { description: "", name: "HI-BUD ADVANCED", department: "Project Management", icon: "content/imgs/PMT.svg" , link: "https://apps.holtec.com/PMT" },
+            { description: "", name: "HI-BUD ADVANCED-BETA", department: "Project Management", icon: "content/imgs/PMTBETA.svg" , link: "https://apps.holtec.com/PMTBeta" },
+            { description: "", name: "CLAIMS", department: "Project Management", icon: "content/imgs/Expenseclaim.svg" , link: "https://appserver.holtec.com/ClaimsDossierApp" },
+            { description: "", name: "MILESTONES", department: "Project Management", icon: "content/imgs/milestones.svg", link: "https://appserver.holtec.com/hbt/MileStoneInv"  },
+            { description: "", name: "PROJECT MANAGERS", department: "Project Management", icon: "content/imgs/ProjectManagment.svg", link: "https://appserver.holtec.com/HBT/Home/ProjectList"  },
+            { description: "", name: "CLIENT FEEDBACK", department: "Project Management", icon: "content/imgs/Clientfeedback.svg", link: "https://apps.holtec.com/ClientFeedback/"  },
+            { description: "", name: "PBLC", department: "Project Management", icon: "content/imgs/PBLC.svg" , link: "https://appserver.holtec.com/HBT/PBLC/ViewPBLC" },
+            { description: "", name: "CWA", department: "Project Management", icon: "content/imgs/CWA.svg", link: "https://mfg.holtec.com/CRNCR/CWA/CWAList"  },
+            { description: "", name: "MFG OPERATION DASHBOARD", department: "Project Management", icon: "content/imgs/MFGOperations.svg", link: "https://mfg.holtec.com/HIMFGDashboard"  },
+
+            { description: "", name: "SALES FUNNEL", department: "Sales", icon: "content/imgs/Salesfunnel.svg", link: "https://apps.holtec.com/salesapp"  },
+            { description: "", name: "PROJECT EXPERIENCE", department: "Sales", icon: "content/imgs/Projectexperience.svg", link: "https://appserver.holtec.com/generic/exp"  },
+
+            { description: "", name: "ACRONYMS", department: "Quality Assurance", icon: "content/imgs/Acronym.svg", link: "http://appserver.holtec.com/qaterms/acronym"  },
+            { description: "", name: "DEFINITIONS", department: "Quality Assurance", icon: "content/imgs/Definitions.svg", link: "http://appserver.holtec.com/QATerms"  },
+            { description: "", name: "LESSONS LEARNED", department: "Quality Assurance", icon: "content/imgs/lessonslearned.svg", link: "https://appserver.holtec.com/QILog/Home/IndexLL"  },
+            { description: "", name: "QA CERTIFICATIONS", department: "Quality Assurance", icon: "content/imgs/QACERT.svg", link: "https://apps.holtec.com/pqs"  },
+            { description: "", name: "CERTIFICATION TRACKER", department: "Quality Assurance", icon: "content/imgs/CertTracker.svg", link: "https://appserver.holtec.com/CertificationTracker"  },
+            { description: "", name: "ACPL", department: "Quality Assurance", icon: "content/imgs/acpl.svg", link: "https://apps.holtec.com/Corp/ACPL/Details"  },
+            { description: "", name: "NOCC", department: "Quality Assurance", icon: "content/imgs/nocc.svg" , link: "https://appserver.holtec.com/IPS/NOCC" },
+            { description: "", name: "QA-PURCHASE ORDER", department: "Quality Assurance", icon: "content/imgs/QAPurchase.svg", link: "https://mfg.holtec.com/prod/qa/searchpo"   },
+            { description: "", name: "QUALIFICATION CERTIFICATE", department: "Quality Assurance", icon: "content/imgs/Qualification.svg", link: "https://apps.holtec.com/CORP/EmpCertificates/SearchQual"  },
+            { description: "", name: "QI LOG", department: "Quality Assurance", icon: "content/imgs/QILOG.svg", link: "https://appserver.holtec.com/QILog"   },
+            { description: "", name: "QP", department: "Quality Assurance", icon: "content/imgs/QualityPlan.svg", link: "https://appserver.holtec.com/QPApp"   },
+
+            { description: "", name: "SAFETY", department: "Safety", icon: "content/imgs/safety.svg", link: "https://apps.holtec.com/safety"  },
+            { description: "", name: "E&HS MANAGEMENT", department: "Safety", icon: "content/imgs/eh&s.svg", link: "https://appserver.holtec.com/EHandSIssueManagement"  },
+
+            { description: "", name: "FCR", department: "Site Services", icon: "content/imgs/FCR.svg", link: "http://apps.holtec.com/FCR"   },
+            { description: "", name: "DSS", department: "Site Services", icon: "content/imgs/DSS.svg", link: "https://apps.holtec.com/SiteServices"   },
+            { description: "", name: "CONTRACTOR TIMESHEET", department: "Site Services", icon: "content/imgs/contractortimesheet.svg", link: "https://apps.holtec.com/cts"  },
+            { description: "", name: "PROCEDURE CHANGE", department: "Site Services", icon: "content/imgs/ProcedureChange.svg", link: "https://appserver.holtec.com/ProcedureChange"  },
+            { description: "", name: "ISS", department: "Site Services", icon: "content/imgs/ISS.svg", link: "http://apps.holtec.com/intlsiteservices"   },
+            { description: "", name: "LEASED ASSETS", department: "Site Services", icon: "content/imgs/Leasedassets.svg", link: "https://apps.holtec.com/LET"  },
+
+            { description: "", name: "MY TIME", department: "Decommissioning", icon: "content/imgs/MyTime.svg", link: "https://apps.holtec.com/mytime"  },
+            { description: "", name: "HIDOC PAL", department: "Decommissioning", icon: "content/imgs/PAL.svg", link: "https://palapps.holtec.com/HDIDOCPAL/"  },
+            { description: "", name: "HIDOC BRP", department: "Decommissioning", icon: "content/imgs/BRP.svg", link: "https://palapps.holtec.com/HDIDOCBRP/"  },
+            { description: "", name: "HIDOC IPEC", department: "Decommissioning", icon: "content/imgs/ipec.svg", link: "https://ipecapps.cdi-decom.com/HDIDOC/"  },
+            { description: "", name: "HIDOC PIL", department: "Decommissioning", icon: "content/imgs/pil.svg", link: "https://pilapps.cdi-decom.com/HDIDOC/"  },
+            { description: "", name: "HIDOC OYS", department: "Decommissioning", icon: "content/imgs/oys.svg", link: "https://oysapps.cdi-decom.com/HDIDOC/"  },
+        ];
+
+        const searchInput = document.getElementById('search');
+        const departmentButtons = document.getElementById('department-buttons');
+        const appGrid = document.getElementById('app-grid');
+        const noResults = document.getElementById('no-results');
+    
+        let selectedDepartments = [];
+    
+        const renderDepartments = () => {
+          const departments = [...new Set(companyApps.map(app => app.department))];
+          departmentButtons.innerHTML = '<span class="text-muted">Departments:</span>';
+          departments.forEach(dept => {
+            const button = document.createElement('button');
+            button.className = 'btn btn-sm btn-outline-secondary';
+            button.textContent = dept;
+            button.onclick = () => toggleDepartment(dept, button);
+            departmentButtons.appendChild(button);
+          });
+    
+          if (selectedDepartments.length > 0) {
+            const clearButton = document.createElement('button');
+            clearButton.className = 'btn btn-sm btn-link text-danger';
+            clearButton.textContent = 'Clear';
+            clearButton.onclick = clearDepartments;
+            departmentButtons.appendChild(clearButton);
+          }
+        };
+    
+        const toggleDepartment = (dept, button) => {
+          if (selectedDepartments.includes(dept)) {
+            selectedDepartments = selectedDepartments.filter(d => d !== dept);
+            button.classList.remove('btn-primary');
+            button.classList.add('btn-outline-secondary');
+          } else {
+            selectedDepartments.push(dept);
+            button.classList.remove('btn-outline-secondary');
+            button.classList.add('btn-primary');
+          }
+          renderApps();
+        };
+    
+        const clearDepartments = () => {
+          selectedDepartments = [];
+          renderDepartments();
+          renderApps();
+        };
+    
+        const renderApps = () => {
+          const searchTerm = searchInput.value.toLowerCase();
+          const filteredApps = companyApps.filter(app => 
+            app.name.toLowerCase().includes(searchTerm) &&
+            (selectedDepartments.length === 0 || selectedDepartments.includes(app.department))
+          );
+    
+          appGrid.innerHTML = '';
+          if (filteredApps.length === 0) {
+            noResults.style.display = 'block';
+            return;
+          }
+    
+          noResults.style.display = 'none';
+          filteredApps.forEach(app => {
+            const col = document.createElement('div');
+            col.className = 'col-md-4';
+            col.innerHTML = `
+              <a href="${app.link}" class="text-decoration-none text-dark">
+                <div class="card hover-scale h-100">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                      <div class="fs-1 me-3">${app.icon}</div>
+                      <h5 class="card-title mb-0">${app.name}</h5>
+                    </div>
+                    <p class="card-text">${app.description}</p>
+                    <small class="text-muted">Department: ${app.department}</small>
+                  </div>
+                </div>
+              </a>
+            `;
+            appGrid.appendChild(col);
+          });
+        };
+    
+        searchInput.addEventListener('input', renderApps);
+        renderDepartments();
+        renderApps();
+      </script>
 </body>
 </html>
