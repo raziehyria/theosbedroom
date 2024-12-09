@@ -16,7 +16,7 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Lato', sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f4f4f4;
@@ -46,6 +46,9 @@
             list-style: none;
             justify-content: flex-end;
         }
+        .push {
+            margin-right: auto;
+          }
 
         #main-nav ul li {
             margin-left: 20px;
@@ -63,7 +66,7 @@
 
         /* Hero Section */
         #hero {
-            background: linear-gradient(to top, #e99991 0%,#df321e 50%, #8d180b 100%); 
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 0, 0, 0.6)), url(https://holtecinternational.com/wp-content/uploads/2023/10/MicrosoftTeams-image-4.png);
             color: white;
             text-align: center;
             padding: 100px 0;
@@ -202,7 +205,7 @@
             #main-nav ul li {
                 margin: 10px 0;
             }
-
+           
             .grid {
                 grid-template-columns: 1fr;
             }
@@ -226,40 +229,32 @@
     <div id="wrapper">
         <header id="main-header">
             <div class="container">
-                <nav id="main-nav">
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
+                <div id="nav-bar">
+                   
+                    <nav id="main-nav">
+                        <ul>
+                            <li class="push"><img src="https://i0.wp.com/holtecinternational.com/wp-content/uploads/2016/01/holtec_logo.png?fit=1367%2C631&ssl=1" style="max-width: 100px;"></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </header>
 
         <div id="hero">
             <div class="container">
-                <h2>Your Gateway to Excellence</h2>
-                <p>Discover what we can do for you.</p>
+                <h2>Holtec International</h2>
+                <p>A Generation Ahead By Design</p>
                 <a href="#services" id="btn">Learn More</a>
             </div>
         </div>
 
         <main id="content">
             <div class="container">
-                <section id="about">
-                    <h2>About Us</h2>
-                    <div class="row">
-                        <div class="col">
-                            <p>We are a web development company dedicated to creating amazing digital experiences.</p>
-                        </div>
-                        <div class="col">
-                            <p>Our team specializes in delivering innovative solutions tailored to your needs.</p>
-                        </div>
-                    </div>
-                </section>
-                
                 <section id="app">
-                    <h2>About Us</h2>
+                    <h2>Explore our App Suite</h2>
                     <div class="mb-4">
                         <!-- Search Input -->
                         <div class="position-relative mb-3">
@@ -292,6 +287,18 @@
                     
                     
                 </section>
+               
+                <!-- <section id="about">
+                    <h2>About Us</h2>
+                    <div class="row">
+                        <div class="col">
+                            <p>We are a web development company dedicated to creating amazing digital experiences.</p>
+                        </div>
+                        <div class="col">
+                            <p>Our team specializes in delivering innovative solutions tailored to your needs.</p>
+                        </div>
+                    </div>
+                </section> -->
 
                 <section id="services">
                     <h2>Our Services</h2>
