@@ -371,121 +371,728 @@
         
 
         const companyApps =  [
-            { description: "test", name: "HI-SPARK", department: "Corporate", icon: "content/imgs/hispark.svg", link: "https://apps.holtec.com/CORP" },
-            { description: "", name: "CORP APP", department: "Corporate", icon: "content/imgs/CorpApp.svg", link: "https://apps.holtec.com/CORP" },
-            { description: "", name: "DIRECTORY", department: "Corporate", icon: "content/imgs/Directory.svg", link: "https://apps.holtec.com/CORP/Account/Login?ReturnUrl=%2FCORP%2FProfile%2Fdirectory" },
-            { description: "", name: "GIFTS REGISTER", department: "Corporate", icon: "content/imgs/GiftRegister.svg", link: "https://apps.holtec.com/Corp/Account/Login?ReturnUrl=%2FCorp%2FGiftsAndBenifits" },
-            { description: "", name: "PRO SHOP", department: "Corporate", icon: "content/imgs/ProShop.svg", link: "https://business.landsend.com/store/holtec_pro_shop/" },
-            { description: "", name: "IMAGE LIBRARY", department: "Corporate", icon: "content/imgs/imageLibrary.svg", link: "https://apps.holtec.com/CORP/imageLibrary" },
-            { description: "", name: "HIP 6", department: "Corporate", icon: "content/imgs/Hip6.svg", link: "https://appserver.holtec.com/HIP6" },
-            { description: "", name: "HORA EXTRA", department: "Corporate", icon: "content/imgs/HoraExtra.svg", link: "https://apps.holtec.com/Corp/Account/Login?ReturnUrl=%2FCorp%2FOvertimeRequest%2FCreateOvertimeRequest%2F0" },
-            { description: "", name: "POSITION PAPERS", department: "Corporate", icon: "content/imgs/PositionPapers.svg", link: "https://mfg.holtec.com/PositionPaper" },
-            { description: "", name: "SECURITY", department: "Corporate", icon: "content/imgs/Security.svg", link: "https://apps.holtec.com/securityapp1" },
-            { description: "", name: "HTC EVENT FORM", department: "Corporate", icon: "content/imgs/HTCEventForm.svg", link: "https://apps.holtec.com/CORP/EventRequestForm/ERCDisplayList" },
-            { description: "", name: "VISITOR PASS", department: "Corporate", icon: "content/imgs/VisitorPass.svg", link: "http://apps.holtec.com/corp/Visitor" },
-            { description: "", name: "WATERMARK", department: "Corporate", icon: "content/imgs/WaterMark.svg", link: "https://appserver.holtec.com/IT/Watermark/Index" },
-            { description: "", name: "TRAVEL REQUEST", department: "Corporate", icon: "content/imgs/TravelRequest.svg", link: "https://apps.holtec.com/CORP/Traveller/Index" },
-            { description: "", name: "DEVOPS", department: "Engineering and Design", icon: "content/imgs/Devops.svg", link: "https://apps.holtec.com/HelpDesk/SoftwareRelease/SWReleaseList" },
-            { description: "", name: "TRAINING PORTAL", department: "Corporate", icon: "content/imgs/TrainingPortal.svg", link: "https://holteccorporate.learnupon.com/" },
-            { description: "A list of holtec employees who are considered the main points of contact for certain holtec apps.", name: "APPLICATION SUPPORT", department: "Corporate", icon: "content/imgs/ApplicationSupport.svg", link: "https://appserver.holtec.com/Content/assets/ApplicationSupport.html" },
-            { description: "", name: "PROFESSIONAL RANKING", department: "Corporate", icon: "content/imgs/ProfessionalRanking.svg", link: "https://apps.holtec.com/Corp/RankReview/ProfessionalRankingMainPage" },
-            { description: "", name: "SECURITY ESCORT", department: "Corporate", icon: "content/imgs/SecurityEscort.svg", link: "https://apps.holtec.com/hisecurity/" },
-            { description: "", name: "LEARN UPON", department: "Corporate", icon: "content/imgs/learnupon.png", link: "https://holteccorporate.learnupon.com/" },
-            
-            { description: "", name: "DAILY REPORT", department: "Human Resources", icon: "content/imgs/DailyReport.svg", link: "https://apps.holtec.com/CORP/WeeklyReport/CreateDailyReport" },
-            { description: "", name: "HOLIDAY CALENDAR", department: "Human Resources", icon: "content/imgs/holidays.svg", link: "https://appserver.holtec.com/Holidays2024.html" },
-            { description: "", name: "WEEKLY REPORT", department:"Human Resources",  icon: "content/imgs/WeeklyReport.svg", link: "https://apps.holtec.com/CORP/WeeklyReport/CreateWeeklyReport" },
-            { description: "", name: "WFH REQUEST", department: "Human Resources", icon: "content/imgs/WFHRequest.svg", link: "https://apps.holtec.com/CORP/HRForm/CreateWFHRequest/0" },
-            { description: "", name: "OUT OF OFFICE", department: "Human Resources", icon: "content/imgs/OOF.svg", link: "https://apps.holtec.com/Corp/HRForm/OutOfOfficeCalendar" },
-            { description: "Portal for access to paystubs and PTO balance and requests", name: "ADP", department: "Human Resources", icon: "content/imgs/ADP.svg", link: "https://workforcenow.adp.com/" },
-            { description: "Awards and Honors Committee", name: "AHC", department: "Human Resources", icon: "content/imgs/AHC.svg", link: "https://apps.holtec.com/corp/public/AHCMemo" },
-            { description: "", name: "EXPENSES", department: "Human Resources", icon: "content/imgs/Expenseclaim.svg", link: "https://apps.holtec.com/Corp/ExpenseClaim/CreateExpenseClaim" },
-            { description: "", name: "IMPROVEMENTS", department: "Human Resources", icon: "content/imgs/Imrpovements.svg", link: "https://apps.holtec.com/CORP/SelfImprovement/Create" },
-            { description: "", name: "IT SERVICE DESK", department: "Human Resources", icon: "content/imgs/Itservicedesk.svg", link: "https://servicedesk.holtec.com/" },
-            { description: "", name: "OJT", department: "Human Resources", icon: "content/imgs/ojt.svg", link: "https://apps.holtec.com/OJTHIQ" },
-            { description: "", name: "PERFORMANCE EVALUATION PORTAL", department: "Human Resources", icon: "content/imgs/Performanceevaluationportal.svg", link: "https://appserver.holtec.com/HRReview/" },
-          
-            { description: "Corrective Action Program – this app is used by our decommissioning sites to identify and track issues that are identified by employees.", name: "CAP", department: "Manufacturing and Inventory", icon: "content/imgs/hispark.svg", link: "https://apps.holtec.com/CORP" },
-            { description: "", name: "INVENTORY", department: "Manufacturing and Inventory", icon: "content/imgs/Inventory (1).svg", link: "https://mfg.holtec.com/InventoryApp" },
-            { description: "Used to track and schedule big heavy pieces of big equipment.", name: "ASSETS", department: "Manufacturing and Inventory", icon: "content/imgs/assets.svg", link: "https://appserver.holtec.com/HAMA/MachineTools?company=ALL&cat=100" },
-            { description: "", name: "DIGITAL RT", department: "Manufacturing and Inventory", icon: "content/imgs/DigitalRT.svg", link: "https://apps.holtec.com/drt" },
-            { description: "", name: "LOGISTICS", department: "Manufacturing and Inventory", icon: "content/imgs/Logistics.svg", link: "https://mfg.holtec.com/ShipApp" },
-            { description: "", name: "VANTAGE RECEIVED", department: "Manufacturing and Inventory", icon: "content/imgs/Inventory-Received.svg", link: "https://appserver.holtec.com/IPS/ItemReceived" },
-            { description: "", name: "IMPR", department: "Manufacturing and Inventory", icon: "content/imgs/IMPR.svg", link: "https://mfg.holtec.com/prod/IMPR" },
-            { description: "", name: "MFG. PLANNING", department: "Manufacturing and Inventory", icon: "content/imgs/MFGPlanning.svg", link: "https://mfg.holtec.com/ManufacturingProcedure" },
-            { description: "", name: "OPERATION ZONES", department: "Manufacturing and Inventory", icon: "content/imgs/OperationsZone.svg", link: "https://htc-devbox.holtec.com/eZones/zones/ShowLiveData" },
-            { description: "Log and notify Production management of issues affecting workflow in the plant.", name: "PRODUCTION ALERT", department: "Manufacturing and Inventory", icon: "content/imgs/ProductionAlert.svg", link: "https://mfg.holtec.com/qcalert" },
-            { description: "", name: "PRODUCTION MANAGEMENT", department: "Manufacturing and Inventory", icon: "content/imgs/productionmanagement.svg", link: "https://mfg.holtec.com/prod" },
-            { description: "", name: "QC ALERT", department: "Manufacturing and Inventory", icon: "content/imgs/qcalert.svg", link: "https://mfg.holtec.com/QCAlert" },
-            { description: "", name: "SMART FACTORY", department: "Manufacturing and Inventory", icon: "content/imgs/smartfactory.svg", link: "http://mfg.holtec.com/ICS/SmartFactory" },
-            { description: "", name: "SHOP PRODUCTIVITY", department: "Manufacturing and Inventory", icon: "content/imgs/shopproduction.svg", link: "https://mfg.holtec.com/prod/ShopWorkers/ViewDirectIndirectReport" },
-            { description: "", name: "CR", department: "Manufacturing and Inventory", icon: "content/imgs/CR.svg", link: "https://mfg.holtec.com/CRNCR/" },
-            { description: "", name: "NCR", department: "Manufacturing and Inventory", icon: "content/imgs/NCR.svg", link: "https://mfg.holtec.com/CRNCR/" },
-            { description: "", name: "SFN", department: "Manufacturing and Inventory", icon: "content/imgs/SFN.svg", link: "https://mfg.holtec.com/CRNCR/" },
-            { description: "", name: "DDR", department: "Manufacturing and Inventory", icon: "content/imgs/DDR.svg", link: "https://mfg.holtec.com/CRNCR/" },
-            { description: "", name: "VNCR", department: "Manufacturing and Inventory", icon: "content/imgs/VNCR.svg", link: "https://mfg.holtec.com/CRNCR/" },
-            { description: "", name: "MITP", department: "Manufacturing and Inventory", icon: "content/imgs/MITP.svg", link: "https://apps.holtec.com/MITP" },
-            
-            { description: "", name: "VENDOR LIST", department: "Procurement", icon: "content/imgs/VendorList.svg", link: "https://appserver.holtec.com/prefervendor" },
-            { description: "", name: "VENDOR ORDER TRACKER", department: "Procurement", icon: "content/imgs/Vendororders.svg", link: "https://apps.holtec.com/vendorportalapp/" },
-            { description: "", name: "PO PORTAL", department: "Procurement", icon: "content/imgs/POPortal.svg", link: "https://appserver.holtec.com/ProcurementPortal" },
-            { description: "", name: "SEARCH PO", department: "Procurement", icon: "content/imgs/SearchPO.svg", link: "https://appserver.holtec.com/ProcurementPortal/SearchPO/FindPO" },
-            { description: "", name: "IPS - INVOICES", department: "Procurement", icon: "content/imgs/IPS.svg", link: "https://appserver.holtec.com/ips" },
-            { description: "", name: "EXCLUDED ENTITY LIST", department: "Procurement", icon: "content/imgs/Excludedentities.svg", link: "https://appserver.holtec.com/PreferVendor/EEL/RevisionDetails" },
-            { description: "", name: "IEP", department: "Procurement", icon: "content/imgs/IEP.svg", link: "https://mfg.holtec.com/invreceived" },
-          
-            { description: "", name: "HIDOC", department: "Engineering and Design", icon: "content/imgs/HIDOC.svg", link: "https://hidoc.holtec.com/hidoc" },
-            { description: "", name: "HIDOC - EXPORT CONTROLLED ZONE", department: "Engineering and Design", icon: "content/imgs/HIDOCEXPORT.svg", link: "https://hidoc.holtec.com/hidoc/ExportRestricted/ViewExportRestrictedFiles" },
-            { description: "", name: "DESIGN GROUP ORG CHART", department: "Engineering and Design", icon: "content/imgs/image59.svg", link: "https://appserver.holtec.com/Content/assets/Design%20Group%20Organization%20Chart%20February%208%202022.pdf" },
-            { description: "", name: "HI-BILL", department: "Engineering and Design", icon: "content/imgs/HiBill.svg", link: "https://eng.holtec.com/BOMWeb/" },
-
-            { description: "Tool for Project Management, Budgeting & Tracking of Cost & Revenue of Projects & Management Reporting", name: "BUDGET TRACKER", department: "Project Management", icon: "content/imgs/Budgettracker.svg" , link: "https://appserver.holtec.com/hbt/" },
-            { description: "", name: "DOC TRANSMITTAL FORM", department: "Project Management", icon: "content/imgs/DTF.svg" , link: "https://appserver.holtec.com/hbt/dtf/projectList" },
-            { description: "", name: "EMAIL REQUEST", department: "Project Management", icon: "content/imgs/EmailRequest.svg", link: "https://holtecinc.sharepoint.com/sites/HoltecForms/Lists/Contractor%20Email%20Request%20Form/Item/newifs.aspx?List=acf2da75-b47f-46ad-a4a5-d2f642b60faf&Source=https%3A%2F%2Fholtecinc%2Esharepoint%2Ecom%2Fsites%2FHoltecForms%2FLists%2FContractor%2520Email%2520Request%2520Form%2FAllItems%2Easpx&ContentTypeId=0x0100AEA48CF4EEFA9E41BF2AA9FB38F4B0AF&RootFolder=" },
-            { description: "", name: "EXECUTIVE SPONSORS", department: "Project Management", icon: "content/imgs/Executivesponsers.svg" , link: "https://appserver.holtec.com/HBT/Projects/InternationalProject" },
-            { description: "", name: "HI-BUD ADVANCED", department: "Project Management", icon: "content/imgs/PMT.svg" , link: "https://apps.holtec.com/PMT" },
-            { description: "", name: "HI-BUD ADVANCED-BETA", department: "Project Management", icon: "content/imgs/PMTBETA.svg" , link: "https://apps.holtec.com/PMTBeta" },
-            { description: "", name: "CLAIMS", department: "Project Management", icon: "content/imgs/Expenseclaim.svg" , link: "https://appserver.holtec.com/ClaimsDossierApp" },
-            { description: "", name: "MILESTONES", department: "Project Management", icon: "content/imgs/milestones.svg", link: "https://appserver.holtec.com/hbt/MileStoneInv"  },
-            { description: "", name: "PROJECT MANAGERS", department: "Project Management", icon: "content/imgs/ProjectManagment.svg", link: "https://appserver.holtec.com/HBT/Home/ProjectList"  },
-            { description: "", name: "CLIENT FEEDBACK", department: "Project Management", icon: "content/imgs/Clientfeedback.svg", link: "https://apps.holtec.com/ClientFeedback/"  },
-            { description: "", name: "PBLC", department: "Project Management", icon: "content/imgs/PBLC.svg" , link: "https://appserver.holtec.com/HBT/PBLC/ViewPBLC" },
-            { description: "", name: "CWA", department: "Project Management", icon: "content/imgs/CWA.svg", link: "https://mfg.holtec.com/CRNCR/CWA/CWAList"  },
-            { description: "", name: "MFG OPERATION DASHBOARD", department: "Project Management", icon: "content/imgs/MFGOperations.svg", link: "https://mfg.holtec.com/HIMFGDashboard"  },
-
-            { description: "", name: "SALES FUNNEL", department: "Sales", icon: "content/imgs/Salesfunnel.svg", link: "https://apps.holtec.com/salesapp"  },
-            { description: "", name: "PROJECT EXPERIENCE", department: "Sales", icon: "content/imgs/Projectexperience.svg", link: "https://appserver.holtec.com/generic/exp"  },
-
-            { description: "Glossary of Acronyms", name: "ACRONYMS", department: "Quality Assurance", icon: "content/imgs/Acronym.svg", link: "http://appserver.holtec.com/qaterms/acronym"  },
-            { description: "", name: "DEFINITIONS", department: "Quality Assurance", icon: "content/imgs/Definitions.svg", link: "http://appserver.holtec.com/QATerms"  },
-            { description: "", name: "LESSONS LEARNED", department: "Quality Assurance", icon: "content/imgs/lessonslearned.svg", link: "https://appserver.holtec.com/QILog/Home/IndexLL"  },
-            { description: "", name: "QA CERTIFICATIONS", department: "Quality Assurance", icon: "content/imgs/QACERT.svg", link: "https://apps.holtec.com/pqs"  },
-            { description: "", name: "CERTIFICATION TRACKER", department: "Quality Assurance", icon: "content/imgs/CertTracker.svg", link: "https://appserver.holtec.com/CertificationTracker"  },
-            { description: "List of approved computer programs used within HOLTEC", name: "ACPL", department: "Quality Assurance", icon: "content/imgs/acpl.svg", link: "https://apps.holtec.com/Corp/ACPL/Details"  },
-            { description: "", name: "NOCC", department: "Quality Assurance", icon: "content/imgs/nocc.svg" , link: "https://appserver.holtec.com/IPS/NOCC" },
-            { description: "", name: "QA-PURCHASE ORDER", department: "Quality Assurance", icon: "content/imgs/QAPurchase.svg", link: "https://mfg.holtec.com/prod/qa/searchpo"   },
-            { description: "", name: "QUALIFICATION CERTIFICATE", department: "Quality Assurance", icon: "content/imgs/Qualification.svg", link: "https://apps.holtec.com/CORP/EmpCertificates/SearchQual"  },
-            { description: "", name: "QI LOG", department: "Quality Assurance", icon: "content/imgs/QILOG.svg", link: "https://appserver.holtec.com/QILog"   },
-            { description: "", name: "QP", department: "Quality Assurance", icon: "content/imgs/QualityPlan.svg", link: "https://appserver.holtec.com/QPApp"   },
-
-            { description: "", name: "SAFETY", department: "Safety", icon: "content/imgs/safety.svg", link: "https://apps.holtec.com/safety"  },
-            { description: "", name: "E&HS MANAGEMENT", department: "Safety", icon: "content/imgs/eh&s.svg", link: "https://appserver.holtec.com/EHandSIssueManagement"  },
-
-            { description: "", name: "FCR", department: "Site Services", icon: "content/imgs/FCR.svg", link: "http://apps.holtec.com/FCR"   },
-            { description: "", name: "DSS", department: "Site Services", icon: "content/imgs/DSS.svg", link: "https://apps.holtec.com/SiteServices"   },
-            { description: "", name: "CONTRACTOR TIMESHEET", department: "Site Services", icon: "content/imgs/contractortimesheet.svg", link: "https://apps.holtec.com/cts"  },
-            { description: "", name: "PROCEDURE CHANGE", department: "Site Services", icon: "content/imgs/ProcedureChange.svg", link: "https://appserver.holtec.com/ProcedureChange"  },
-            { description: "", name: "ISS", department: "Site Services", icon: "content/imgs/ISS.svg", link: "http://apps.holtec.com/intlsiteservices"   },
-            { description: "", name: "LEASED ASSETS", department: "Site Services", icon: "content/imgs/Leasedassets.svg", link: "https://apps.holtec.com/LET"  },
-
-            { description: "", name: "MY TIME", department: "Decommissioning", icon: "content/imgs/MyTime.svg", link: "https://apps.holtec.com/mytime"  },
-            { description: "", name: "HIDOC PAL", department: "Decommissioning", icon: "content/imgs/PAL.svg", link: "https://palapps.holtec.com/HDIDOCPAL/"  },
-            { description: "", name: "HIDOC BRP", department: "Decommissioning", icon: "content/imgs/BRP.svg", link: "https://palapps.holtec.com/HDIDOCBRP/"  },
-            { description: "", name: "HIDOC IPEC", department: "Decommissioning", icon: "content/imgs/ipec.svg", link: "https://ipecapps.cdi-decom.com/HDIDOC/"  },
-            { description: "", name: "HIDOC PIL", department: "Decommissioning", icon: "content/imgs/pil.svg", link: "https://pilapps.cdi-decom.com/HDIDOC/"  },
-            { description: "", name: "HIDOC OYS", department: "Decommissioning", icon: "content/imgs/oys.svg", link: "https://oysapps.cdi-decom.com/HDIDOC/"  },
-          
-        ];
+        {
+          description: "na",
+          name: "HI-SPARK",
+          department: "Corporate",
+          icon: "content/imgs/hispark.svg",
+          link: "https://apps.holtec.com/CORP"
+        },
+        {
+          description: "Corp Application is software program is used to managed employee information, directory, WFH , TAR and Daily Reports",
+          name: "CORP APP",
+          department: "Corporate",
+          icon: "content/imgs/CorpApp.svg",
+          link: "https://apps.holtec.com/CORP"
+        },
+        {
+          description: "Holtec Employee's Directory",
+          name: "DIRECTORY",
+          department: "Corporate",
+          icon: "content/imgs/Directory.svg",
+          link: "https://apps.holtec.com/CORP/Account/Login?ReturnUrl=%2FCORP%2FProfile%2Fdirectory"
+        },
+        {
+          description: "Gifts and Benefits Portal",
+          name: "GIFTS REGISTER",
+          department: "Corporate",
+          icon: "content/imgs/GiftRegister.svg",
+          link: "https://apps.holtec.com/Corp/Account/Login?ReturnUrl=%2FCorp%2FGiftsAndBenifits"
+        },
+        {
+          description: "Company Appearal store",
+          name: "PRO SHOP",
+          department: "Corporate",
+          icon: "content/imgs/ProShop.svg",
+          link: "https://business.landsend.com/store/holtec_pro_shop/"
+        },
+        {
+          description: "An image library that employees can contribute you to, so that their photos can be used for Holtec pamplets, videos, etc content.",
+          name: "IMAGE LIBRARY",
+          department: "Corporate",
+          icon: "content/imgs/imageLibrary.svg",
+          link: "https://apps.holtec.com/CORP/imageLibrary"
+        },
+        {
+          description: "A software which is used for resource management at Holtec. HIP6 provides a means for individuals to log timesheet and track work progress information.",
+          name: "HIP 6",
+          department: "Corporate",
+          icon: "content/imgs/Hip6.svg",
+          link: "https://appserver.holtec.com/HIP6"
+        },
+        {
+          description: "Overtime/Compensatory Off Request",
+          name: "HORA EXTRA",
+          department: "Corporate",
+          icon: "content/imgs/HoraExtra.svg",
+          link: "https://apps.holtec.com/Corp/Account/Login?ReturnUrl=%2FCorp%2FOvertimeRequest%2FCreateOvertimeRequest%2F0"
+        },
+        {
+          description: "Portal to Save and organize company's Position papers",
+          name: "POSITION PAPERS",
+          department: "Corporate",
+          icon: "content/imgs/PositionPapers.svg",
+          link: "https://mfg.holtec.com/PositionPaper"
+        },
+        {
+          description: "An application designed for the use of Holtec Security teams/",
+          name: "SECURITY",
+          department: "Corporate",
+          icon: "content/imgs/Security.svg",
+          link: "https://apps.holtec.com/securityapp1"
+        },
+        {
+          description: "Event Request List",
+          name: "HTC EVENT FORM",
+          department: "Corporate",
+          icon: "content/imgs/HTCEventForm.svg",
+          link: "https://apps.holtec.com/CORP/EventRequestForm/ERCDisplayList"
+        },
+        {
+          description: "A visitor registration form",
+          name: "VISITOR PASS",
+          department: "Corporate",
+          icon: "content/imgs/VisitorPass.svg",
+          link: "http://apps.holtec.com/corp/Visitor"
+        },
+        {
+          description: "A simple water mark tool.",
+          name: "WATERMARK",
+          department: "Corporate",
+          icon: "content/imgs/WaterMark.svg",
+          link: "https://appserver.holtec.com/IT/Watermark/Index"
+        },
+        {
+          description: "Travel Authorization module is a part of the Corp App.",
+          name: "TRAVEL REQUEST",
+          department: "Corporate",
+          icon: "content/imgs/TravelRequest.svg",
+          link: "https://apps.holtec.com/CORP/Traveller/Index"
+        },
+        {
+          description: "developer sandbox environment",
+          name: "DEVOPS",
+          department: "Engineering and Design",
+          icon: "content/imgs/Devops.svg",
+          link: "https://apps.holtec.com/HelpDesk/SoftwareRelease/SWReleaseList"
+        },
+        {
+          description: "Learning Management System (LMS) designed to streamline training delivery for businesses, educational institutions, and professionals. ",
+          name: "TRAINING PORTAL",
+          department: "Corporate",
+          icon: "content/imgs/TrainingPortal.svg",
+          link: "https://holteccorporate.learnupon.com/"
+        },
+        {
+          description: "A list of holtec employees who are considered the main points of contact for certain holtec apps.",
+          name: "APPLICATION SUPPORT",
+          department: "Corporate",
+          icon: "content/imgs/ApplicationSupport.svg",
+          link: "https://appserver.holtec.com/Content/assets/ApplicationSupport.html"
+        },
+        {
+          description: "new",
+          name: "PROFESSIONAL RANKING",
+          department: "Corporate",
+          icon: "content/imgs/ProfessionalRanking.svg",
+          link: "https://apps.holtec.com/Corp/RankReview/ProfessionalRankingMainPage"
+        },
+        {
+          description: "new",
+          name: "SECURITY ESCORT",
+          department: "Corporate",
+          icon: "content/imgs/SecurityEscort.svg",
+          link: "https://apps.holtec.com/hisecurity/"
+        },
+        {
+          description: "Learning Management System (LMS) designed to streamline training delivery for businesses, educational institutions, and professionals.",
+          name: "LEARN UPON",
+          department: "Corporate",
+          icon: "content/imgs/learnupon.png",
+          link: "https://holteccorporate.learnupon.com/"
+        },
+        {
+          description: "Daily Report (or \"My Diary\") is an app designed to allow Holtec associates to keep their supervisor(s) posted on latest updates in ongoing work",
+          name: "DAILY REPORT",
+          department: "Human Resources",
+          icon: "content/imgs/DailyReport.svg",
+          link: "https://apps.holtec.com/CORP/WeeklyReport/CreateDailyReport"
+        },
+        {
+          description: "Holiday List 2023",
+          name: "HOLIDAY CALENDAR",
+          department: "Human Resources",
+          icon: "content/imgs/holidays.svg",
+          link: "https://appserver.holtec.com/Holidays2024.html"
+        },
+        {
+          description: "Weekly submission of accomplimnets made for the week",
+          name: "WEEKLY REPORT",
+          department: "Human Resources",
+          icon: "content/imgs/WeeklyReport.svg",
+          link: "https://apps.holtec.com/CORP/WeeklyReport/CreateWeeklyReport"
+        },
+        {
+          description: "An employee should created WFH request  to get permission to work from home",
+          name: "WFH REQUEST",
+          department: "Human Resources",
+          icon: "content/imgs/WFHRequest.svg",
+          link: "https://apps.holtec.com/CORP/HRForm/CreateWFHRequest/0"
+        },
+        {
+          description: "List of holtec employees currently out of the office",
+          name: "OUT OF OFFICE",
+          department: "Human Resources",
+          icon: "content/imgs/OOF.svg",
+          link: "https://apps.holtec.com/Corp/HRForm/OutOfOfficeCalendar"
+        },
+        {
+          description: "Portal for access to paystubs and PTO balance and requests",
+          name: "ADP",
+          department: "Human Resources",
+          icon: "content/imgs/ADP.svg",
+          link: "https://workforcenow.adp.com/"
+        },
+        {
+          description: "Awards and Honors Committee\ufffd",
+          name: "AHC",
+          department: "Human Resources",
+          icon: "content/imgs/AHC.svg",
+          link: "https://apps.holtec.com/corp/public/AHCMemo"
+        },
+        {
+          description: "Expense management software is application that provide the receipt-to- reimbursement process . With this software an user can manage expense report submission and accelerate reimbursements.",
+          name: "EXPENSES",
+          department: "Human Resources",
+          icon: "content/imgs/Expenseclaim.svg",
+          link: "https://apps.holtec.com/Corp/ExpenseClaim/CreateExpenseClaim"
+        },
+        {
+          description: "A Holtec employee suggestion box.",
+          name: "IMPROVEMENTS",
+          department: "Human Resources",
+          icon: "content/imgs/Imrpovements.svg",
+          link: "https://apps.holtec.com/CORP/SelfImprovement/Create"
+        },
+        {
+          description: "IT technical Help portal.",
+          name: "IT SERVICE DESK",
+          department: "Human Resources",
+          icon: "content/imgs/Itservicedesk.svg",
+          link: "https://servicedesk.holtec.com/"
+        },
+        {
+          description: "On the job training.",
+          name: "OJT",
+          department: "Human Resources",
+          icon: "content/imgs/ojt.svg",
+          link: "https://apps.holtec.com/OJTHIQ"
+        },
+        {
+          description: "NEW",
+          name: "PERFORMANCE EVALUATION PORTAL",
+          department: "Human Resources",
+          icon: "content/imgs/Performanceevaluationportal.svg",
+          link: "https://appserver.holtec.com/HRReview/"
+        },
+        {
+          description: "CAP Application Corrective Action Program \ufffd this app is used by our decommissioning sites to identify and track issues that are identified by employees. In addition to identifying issues, corrective actions can be assigned to individuals to correct the issue that was discovered.",
+          name: "CAP",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/hispark.svg",
+          link: "https://apps.holtec.com/CORP"
+        },
+        {
+          description: "App for doing QA/QC of an item, to generate MIC and MIR number. Manage inventory and request and allocate materialsocate",
+          name: "INVENTORY",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/Inventory (1).svg",
+          link: "https://mfg.holtec.com/InventoryApp"
+        },
+        {
+          description: "Used to track and schedule big heavy pieces of big equipment.",
+          name: "ASSETS",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/assets.svg",
+          link: "https://appserver.holtec.com/HAMA/MachineTools?company=ALL&cat=100"
+        },
+        {
+          description: "HOLTEC DIGITAL RADIOGRAPHY",
+          name: "DIGITAL RT",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/DigitalRT.svg",
+          link: "https://apps.holtec.com/drt"
+        },
+        {
+          description: "Shipment tracking app",
+          name: "LOGISTICS",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/Logistics.svg",
+          link: "https://mfg.holtec.com/ShipApp"
+        },
+        {
+          description: "IPS app implements the Holtecs business process to rout an invoice from receiptto payment.",
+          name: "VANTAGE RECEIVED",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/Inventory-Received.svg",
+          link: "https://appserver.holtec.com/IPS/ItemReceived"
+        },
+        {
+          description: "Centralized application to manage Internal Material Processing Requests",
+          name: "IMPR",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/IMPR.svg",
+          link: "https://mfg.holtec.com/prod/IMPR"
+        },
+        {
+          description: "Manufacturing Planning/Procedure App",
+          name: "MFG. PLANNING",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/MFGPlanning.svg",
+          link: "https://mfg.holtec.com/ManufacturingProcedure"
+        },
+        {
+          description: "App used to control TV displays in the shop.",
+          name: "OPERATION ZONES",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/OperationsZone.svg",
+          link: "https://htc-devbox.holtec.com/eZones/zones/ShowLiveData"
+        },
+        {
+          description: "Application used to log and notify Production management of issues affecting workflow in the plant.",
+          name: "PRODUCTION ALERT",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/ProductionAlert.svg",
+          link: "https://mfg.holtec.com/qcalert"
+        },
+        {
+          description: "I.P.R Porduction Management. The production app is a centeralized system for IPR and IMPR tracking.",
+          name: "PRODUCTION MANAGEMENT",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/productionmanagement.svg",
+          link: "https://mfg.holtec.com/prod"
+        },
+        {
+          description: "Continuous monitoring of QC and Production Requests made on the manufacturing shop floor.",
+          name: "QC ALERT",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/qcalert.svg",
+          link: "https://mfg.holtec.com/QCAlert"
+        },
+        {
+          description: "Machine Analytics",
+          name: "SMART FACTORY",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/smartfactory.svg",
+          link: "http://mfg.holtec.com/ICS/SmartFactory"
+        },
+        {
+          description: "Supervisor view of ADP, EST and Vantage hours for a shopfloor associate",
+          name: "SHOP PRODUCTIVITY",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/shopproduction.svg",
+          link: "https://mfg.holtec.com/prod/ShopWorkers/ViewDirectIndirectReport"
+        },
+        {
+          description: "CR(Conformance Report) summarizes fault in product(s)/process(s)",
+          name: "CR",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/CR.svg",
+          link: "https://mfg.holtec.com/CRNCR/"
+        },
+        {
+          description: "To create NON Conformance report for product or process",
+          name: "NCR",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/NCR.svg",
+          link: "https://mfg.holtec.com/CRNCR/"
+        },
+        {
+          description: "Shop Fab. Note",
+          name: "SFN",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/SFN.svg",
+          link: "https://mfg.holtec.com/CRNCR/"
+        },
+        {
+          description: "Design deviation request",
+          name: "DDR",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/DDR.svg",
+          link: "https://mfg.holtec.com/CRNCR/"
+        },
+        {
+          description: "na",
+          name: "VNCR",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/VNCR.svg",
+          link: "https://mfg.holtec.com/CRNCR/"
+        },
+        {
+          description: "na",
+          name: "MITP",
+          department: "Manufacturing and Inventory",
+          icon: "content/imgs/MITP.svg",
+          link: "https://apps.holtec.com/MITP"
+        },
+        {
+          description: "Holtec Vendors",
+          name: "VENDOR LIST",
+          department: "Procurement",
+          icon: "content/imgs/VendorList.svg",
+          link: "https://appserver.holtec.com/prefervendor"
+        },
+        {
+          description: "A vendor order tracker",
+          name: "VENDOR ORDER TRACKER",
+          department: "Procurement",
+          icon: "content/imgs/Vendororders.svg",
+          link: "https://apps.holtec.com/vendorportalapp/"
+        },
+        {
+          description: "HI-POP (PO Portal) is a Procurement Portal used to process the purchase orders (POs) created (in Vantage) to procure the items/ goods from different vendors",
+          name: "PO PORTAL",
+          department: "Procurement",
+          icon: "content/imgs/POPortal.svg",
+          link: "https://appserver.holtec.com/ProcurementPortal"
+        },
+        {
+          description: "Find purchase order",
+          name: "SEARCH PO",
+          department: "Procurement",
+          icon: "content/imgs/SearchPO.svg",
+          link: "https://appserver.holtec.com/ProcurementPortal/SearchPO/FindPO"
+        },
+        {
+          description: "IPS is a business function performed by the accounts payable department. Invoice Processing System is a software application.",
+          name: "IPS - INVOICES",
+          department: "Procurement",
+          icon: "content/imgs/IPS.svg",
+          link: "https://appserver.holtec.com/ips"
+        },
+        {
+          description: "Portal that shows a list of clients/entities ineligible to receive Holtec's Information.",
+          name: "EXCLUDED ENTITY LIST",
+          department: "Procurement",
+          icon: "content/imgs/Excludedentities.svg",
+          link: "https://appserver.holtec.com/PreferVendor/EEL/RevisionDetails"
+        },
+        {
+          description: "na",
+          name: "IEP",
+          department: "Procurement",
+          icon: "content/imgs/IEP.svg",
+          link: "https://mfg.holtec.com/invreceived"
+        },
+        {
+          description: "Holtec International Document Organization & Control - A consolidated application to connect people to information globally",
+          name: "HIDOC",
+          department: "Engineering and Design",
+          icon: "content/imgs/HIDOC.svg",
+          link: "https://hidoc.holtec.com/hidoc"
+        },
+        {
+          description: "Holtec Decommissioned Plant Document Repository",
+          name: "HIDOC - EXPORT CONTROLLED ZONE",
+          department: "Engineering and Design",
+          icon: "content/imgs/HIDOCEXPORT.svg",
+          link: "https://hidoc.holtec.com/hidoc/ExportRestricted/ViewExportRestrictedFiles"
+        },
+        {
+          description: "Tech Sponsor and Design Group Organization Chart",
+          name: "DESIGN GROUP ORG CHART",
+          department: "Engineering and Design",
+          icon: "content/imgs/image59.svg",
+          link: "https://appserver.holtec.com/Content/assets/Design%20Group%20Organization%20Chart%20February%208%202022.pdf"
+        },
+        {
+          description: "BILL of Material",
+          name: "HI-BILL",
+          department: "Engineering and Design",
+          icon: "content/imgs/HiBill.svg",
+          link: "https://eng.holtec.com/BOMWeb/"
+        },
+        {
+          description: "Tool for Project Management, Budgeting & Tracking of Cost & Revenue of Projects & Management Reporting",
+          name: "BUDGET TRACKER",
+          department: "Project Management",
+          icon: "content/imgs/Budgettracker.svg",
+          link: "https://appserver.holtec.com/hbt/"
+        },
+        {
+          description: "na",
+          name: "DOC TRANSMITTAL FORM",
+          department: "Project Management",
+          icon: "content/imgs/DTF.svg",
+          link: "https://appserver.holtec.com/hbt/dtf/projectList"
+        },
+        {
+          description: "Redirects users to the holtec service desk.",
+          name: "EMAIL REQUEST",
+          department: "Project Management",
+          icon: "content/imgs/EmailRequest.svg",
+          link: "https://holtecinc.sharepoint.com/sites/HoltecForms/Lists/Contractor%20Email%20Request%20Form/Item/newifs.aspx?List=acf2da75-b47f-46ad-a4a5-d2f642b60faf&Source=https%3A%2F%2Fholtecinc%2Esharepoint%2Ecom%2Fsites%2FHoltecForms%2FLists%2FContractor%2520Email%2520Request%2520Form%2FAllItems%2Easpx&ContentTypeId=0x0100AEA48CF4EEFA9E41BF2AA9FB38F4B0AF&RootFolder="
+        },
+        {
+          description: "Executive Sponsor Assignments For Complex Projects",
+          name: "EXECUTIVE SPONSORS",
+          department: "Project Management",
+          icon: "content/imgs/Executivesponsers.svg",
+          link: "https://appserver.holtec.com/HBT/Projects/InternationalProject"
+        },
+        {
+          description: "na",
+          name: "HI-BUD ADVANCED",
+          department: "Project Management",
+          icon: "content/imgs/PMT.svg",
+          link: "https://apps.holtec.com/PMT"
+        },
+        {
+          description: "na",
+          name: "HI-BUD ADVANCED-BETA",
+          department: "Project Management",
+          icon: "content/imgs/PMTBETA.svg",
+          link: "https://apps.holtec.com/PMTBeta"
+        },
+        {
+          description: "Web Portal to manage Holtec's Claims",
+          name: "CLAIMS",
+          department: "Project Management",
+          icon: "content/imgs/Expenseclaim.svg",
+          link: "https://appserver.holtec.com/ClaimsDossierApp"
+        },
+        {
+          description: "Part of budget tracker to manage milestones/account receivables for the project",
+          name: "MILESTONES",
+          department: "Project Management",
+          icon: "content/imgs/milestones.svg",
+          link: "https://appserver.holtec.com/hbt/MileStoneInv"
+        },
+        {
+          description: "na",
+          name: "PROJECT MANAGERS",
+          department: "Project Management",
+          icon: "content/imgs/ProjectManagment.svg",
+          link: "https://appserver.holtec.com/HBT/Home/ProjectList"
+        },
+        {
+          description: "It's a portal where Holec PMs send email to client to collect performance feedback twice annually on the project(s) on which Holtec has worked on",
+          name: "CLIENT FEEDBACK",
+          department: "Project Management",
+          icon: "content/imgs/Clientfeedback.svg",
+          link: "https://apps.holtec.com/ClientFeedback/"
+        },
+        {
+          description: "na",
+          name: "PBLC",
+          department: "Project Management",
+          icon: "content/imgs/PBLC.svg",
+          link: "https://appserver.holtec.com/HBT/PBLC/ViewPBLC"
+        },
+        {
+          description: "Means to track conditional work authorization",
+          name: "CWA",
+          department: "Project Management",
+          icon: "content/imgs/CWA.svg",
+          link: "https://mfg.holtec.com/CRNCR/CWA/CWAList"
+        },
+        {
+          description: "Manufacturing Operation Dashboard",
+          name: "MFG OPERATION DASHBOARD",
+          department: "Project Management",
+          icon: "content/imgs/MFGOperations.svg",
+          link: "https://mfg.holtec.com/HIMFGDashboard"
+        },
+        {
+          description: "na",
+          name: "SALES FUNNEL",
+          department: "Sales",
+          icon: "content/imgs/Salesfunnel.svg",
+          link: "https://apps.holtec.com/salesapp"
+        },
+        {
+          description: "Lists information about type of Holtec projects, clients & project location",
+          name: "PROJECT EXPERIENCE",
+          department: "Sales",
+          icon: "content/imgs/Projectexperience.svg",
+          link: "https://appserver.holtec.com/generic/exp"
+        },
+        {
+          description: "Glossary of Acronyms",
+          name: "ACRONYMS",
+          department: "Quality Assurance",
+          icon: "content/imgs/Acronym.svg",
+          link: "http://appserver.holtec.com/qaterms/acronym"
+        },
+        {
+          description: "HOLTEC QA Glossery of Terms",
+          name: "DEFINITIONS",
+          department: "Quality Assurance",
+          icon: "content/imgs/Definitions.svg",
+          link: "http://appserver.holtec.com/QATerms"
+        },
+        {
+          description: "An app that track employee made issues as they occur and the categpry and corrective actions that apply to them.",
+          name: "LESSONS LEARNED",
+          department: "Quality Assurance",
+          icon: "content/imgs/lessonslearned.svg",
+          link: "https://appserver.holtec.com/QILog/Home/IndexLL"
+        },
+        {
+          description: "na",
+          name: "QA CERTIFICATIONS",
+          department: "Quality Assurance",
+          icon: "content/imgs/QACERT.svg",
+          link: "https://apps.holtec.com/pqs"
+        },
+        {
+          description: "na",
+          name: "CERTIFICATION TRACKER",
+          department: "Quality Assurance",
+          icon: "content/imgs/CertTracker.svg",
+          link: "https://appserver.holtec.com/CertificationTracker"
+        },
+        {
+          description: "List of approved computer programs used within HOLTEC",
+          name: "ACPL",
+          department: "Quality Assurance",
+          icon: "content/imgs/acpl.svg",
+          link: "https://apps.holtec.com/Corp/ACPL/Details"
+        },
+        {
+          description: "Notice of Commercial Claim",
+          name: "NOCC",
+          department: "Quality Assurance",
+          icon: "content/imgs/nocc.svg",
+          link: "https://appserver.holtec.com/IPS/NOCC"
+        },
+        {
+          description: "na",
+          name: "QA-PURCHASE ORDER",
+          department: "Quality Assurance",
+          icon: "content/imgs/QAPurchase.svg",
+          link: "https://mfg.holtec.com/prod/qa/searchpo"
+        },
+        {
+          description: "na",
+          name: "QUALIFICATION CERTIFICATE",
+          department: "Quality Assurance",
+          icon: "content/imgs/Qualification.svg",
+          link: "https://apps.holtec.com/CORP/EmpCertificates/SearchQual"
+        },
+        {
+          description: "Database of Quality Infractions. As well as the means to log new QI's and their investigation, details, and corrective actions.",
+          name: "QI LOG",
+          department: "Quality Assurance",
+          icon: "content/imgs/QILOG.svg",
+          link: "https://appserver.holtec.com/QILog"
+        },
+        {
+          description: "This app replaces the paper base process to develop quality plan. Quality Plan is required when item is procured from a vendor who is not qualified to provide such items under the designated Safety Significant classification. Quality plan identifies the critical characteristics, method of verification and acceptance criteria.",
+          name: "QP",
+          department: "Quality Assurance",
+          icon: "content/imgs/QualityPlan.svg",
+          link: "https://appserver.holtec.com/QPApp"
+        },
+        {
+          description: "The Saftey app is a digital one stop place for all Holtec safety forms, and you fill out these forms to collect data or to find issues that were identified before they actually occurred.",
+          name: "SAFETY",
+          department: "Safety",
+          icon: "content/imgs/safety.svg",
+          link: "https://apps.holtec.com/safety"
+        },
+        {
+          description: "Environmental, health and safety management",
+          name: "E&HS MANAGEMENT",
+          department: "Safety",
+          icon: "content/imgs/eh&s.svg",
+          link: "https://appserver.holtec.com/EHandSIssueManagement"
+        },
+        {
+          description: "A service used for field condition reports, that gives you the ability to record if an issue at site occurs, and track it to completion.",
+          name: "FCR",
+          department: "Site Services",
+          icon: "content/imgs/FCR.svg",
+          link: "http://apps.holtec.com/FCR"
+        },
+        {
+          description: "Domestive site services. The app allows users to access essential project-related information and streamline communication across different departments and teams involved in site services.",
+          name: "DSS",
+          department: "Site Services",
+          icon: "content/imgs/DSS.svg",
+          link: "https://apps.holtec.com/SiteServices"
+        },
+        {
+          description: "Similar to MyTime, except contractor timesheet is for contractors that work with Holtec",
+          name: "CONTRACTOR TIMESHEET",
+          department: "Site Services",
+          icon: "content/imgs/contractortimesheet.svg",
+          link: "https://apps.holtec.com/cts"
+        },
+        {
+          description: "na",
+          name: "PROCEDURE CHANGE",
+          department: "Site Services",
+          icon: "content/imgs/ProcedureChange.svg",
+          link: "https://appserver.holtec.com/ProcedureChange"
+        },
+        {
+          description: "International Site Services mirrors DSS in terms of functionalities but is designed to accommodate the unique requirements and considerations associated with international projects.",
+          name: "ISS",
+          department: "Site Services",
+          icon: "content/imgs/ISS.svg",
+          link: "http://apps.holtec.com/intlsiteservices"
+        },
+        {
+          description: "Real name Asset tracking. The leased assets are assets that holtec has built that are rented or leased to our clients.",
+          name: "LEASED ASSETS",
+          department: "Site Services",
+          icon: "content/imgs/Leasedassets.svg",
+          link: "https://apps.holtec.com/LET"
+        },
+        {
+          description: "HDI/HSI Timesheet",
+          name: "MY TIME",
+          department: "Decommissioning",
+          icon: "content/imgs/MyTime.svg",
+          link: "https://apps.holtec.com/mytime"
+        },
+        {
+          description: "na",
+          name: "HIDOC PAL",
+          department: "Decommissioning",
+          icon: "content/imgs/PAL.svg",
+          link: "https://palapps.holtec.com/HDIDOCPAL/"
+        },
+        {
+          description: "na",
+          name: "HIDOC BRP",
+          department: "Decommissioning",
+          icon: "content/imgs/BRP.svg",
+          link: "https://palapps.holtec.com/HDIDOCBRP/"
+        },
+        {
+          description: "na",
+          name: "HIDOC IPEC",
+          department: "Decommissioning",
+          icon: "content/imgs/ipec.svg",
+          link: "https://ipecapps.cdi-decom.com/HDIDOC/"
+        },
+        {
+          description: "na",
+          name: "HIDOC PIL",
+          department: "Decommissioning",
+          icon: "content/imgs/pil.svg",
+          link: "https://pilapps.cdi-decom.com/HDIDOC/"
+        },
+        {
+          description: "na",
+          name: "HIDOC OYS",
+          department: "Decommissioning",
+          icon: "content/imgs/oys.svg",
+          link: "https://oysapps.cdi-decom.com/HDIDOC/"
+        }
+      ];
 
         const searchInput = document.getElementById('search');
         const departmentButtons = document.getElementById('department-buttons');
